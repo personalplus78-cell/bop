@@ -2,7 +2,7 @@
 nixPkgs = ["python311", "poppler_utils", "fontconfig", "dejavu_fonts"]
 
 [phases.install]
-cmdsPath = "requirements.txt"
+cmds = ["pip install -r requirements.txt"]
 
 [start]
-cmd = "gunicorn app:app --bind 0.0.0.0:$PORT --timeout 300 --workers 2"
+cmd = "gunicorn app:app --bind 0.0.0.0:$PORT --timeout 300 --workers 1"
